@@ -116,7 +116,7 @@ class SearchFragment : Fragment() {
                     println("not!!!!")
                 }*/
 
-                val url = "http://192.168.219.100:5000/"
+                val url = "http://192.168.1.181:5000/"
                 val client = OkHttpClient.Builder()
                     .connectTimeout(1000, TimeUnit.SECONDS)
                     .writeTimeout(1000, TimeUnit.SECONDS)

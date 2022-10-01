@@ -1,3 +1,4 @@
+from concurrent.futures import process, thread
 from flask import Flask, render_template, send_file
 from flask import request
 import flask
@@ -20,7 +21,7 @@ app=Flask(__name__)
 def hello_world():
     if request.method == 'POST':
 
-
+        print("hi")
         file_dir2 = "C:\\Users\\kim01\\MyWorkload\\photo.png"
 
         root = "./photo.png"
@@ -71,11 +72,11 @@ def hello_world():
         file_dir = "C:\\Users\\kim01\\MyWorkload\\photo.png"
         f2 = flask.request.files.get('image')
         f2.save("C:\\Users\\kim01\\MyWorkload\\wtf1.png")
-        
+        print("end")
         file = []
         file.append(file_dir)
         return send_file(sending, mimetype='image/jpg')
         
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', threaded = True, debug=False)

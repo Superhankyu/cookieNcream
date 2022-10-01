@@ -6,7 +6,8 @@ from tensorflow import keras
 
 def color(img_array):
     model = keras.models.load_model("./color_model.h5")
-    predictions = model.predict(img_array)
+    predictions = model(img_array)
+    # predictions = model.predict(img_array)
     score = tf.nn.softmax(predictions[0])
     class_names = ['black', 'blue', 'brown', 'green', 'grey', 'orange', 'pink', 'red', 'skyblue', 'violet', 'white', 'yellow']
 
@@ -14,7 +15,8 @@ def color(img_array):
 
 def category(img_array):
     model = keras.models.load_model("./category_model_mnist.h5")
-    predictions = model.predict(img_array)
+    predictions = model(img_array)
+    # predictions = model.predict(img_array)
     score = tf.nn.softmax(predictions[0])
     class_names = ['bottom', 'dress', 'outer', 'top']
 
@@ -29,8 +31,8 @@ def length(img_array, type):
         model = keras.models.load_model("./length_model_outer.h5")
     if type == 'dress':
         model = keras.models.load_model("./length_model_dress.h5")
-
-    predictions = model.predict(img_array)
+    predictions = model(img_array)
+    # predictions = model.predict(img_array)
     score = tf.nn.softmax(predictions[0])
     class_names = ['long', 'middle', 'short']
 
@@ -45,8 +47,8 @@ def fit(img_array, type):
         model = keras.models.load_model("./fit_model_outer.h5")
     if type == 'dress':
         model = keras.models.load_model("./fit_model_dress.h5")
-
-    predictions = model.predict(img_array)
+    predictions = model(img_array)
+    # predictions = model.predict(img_array)
     score = tf.nn.softmax(predictions[0])
     class_names = ['loose', 'normal', 'tight']
 
