@@ -2,6 +2,7 @@
 [SWE3028-41] Capstone Design <br />
 Contact e-mail : kim0112hg@naver.com <br />
 Demo Video : https://www.youtube.com/watch?v=hQmCSHVULcM <br />
+docker image : https://hub.docker.com/repository/docker/superhankyu/cookiencream
 
 ## Introduction
 This is an android application for user who wants to get recommendations from someone.
@@ -12,16 +13,18 @@ This is an android application for user who wants to get recommendations from so
 
 ## Development Environment
 - Python under 3.6.x 
-- Tensorflow
+- Tensorflow 2.4
 - Flask
 - Android Studio @3.5.3
-
+- nginx
+- uwsgi
+  
 ## Application Version
 - minSdkVersion : 15
 - targetSdkVersion : 26
 
 ## Files
-- app.py : This is a file to run the server. If you want to run the server yourself, just install a **Python version below 3.6, flask, tensorflow** and **change the IP** address to open the server and run it.
+- app.py : This is a file to run the server. If you want to run the server yourself, just install a **Python version below 3.6, flask, tensorflow 2.4** and **change the IP** address to open the server and run it.
 - *.models or h5 files : These are deep learning model files that process images received through the server. Please put "models" folder in the same directory as app.py.
 - Fatching : This is the main application. If you opened the server yourself, please change the ip address in the application SearchFragment.kt that communicates with the server.
 - mannish_* : These are small datasets that can test the model, and adding the dataset to this folder allows more diverse recommendations. Don't change the folder name. Please place the folder in the same directory as app.py
